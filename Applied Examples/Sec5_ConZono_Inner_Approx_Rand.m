@@ -96,7 +96,14 @@ V_ratios(iter,:) = [CG_ratio G_ratio B_ratio];
 end
 
 figure('Position',[100 100 400 300]); 
+boxplot(V_ratios,'Labels',{'$Z_r$','$Z$','$B$'})
+set(gca,'TickLabelInterpreter','latex')
+ylabel('$V_r$')
+ylim([0 1.1])
+yticks(linspace(0,1,6))
+grid off
+box on
+
 set(gcf, 'Color', 'w');
-boxplot(V_ratios)
 
 % export_fig ConZono_Inner_Approx_Rand.pdf -painters 
