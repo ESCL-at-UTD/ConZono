@@ -13,8 +13,25 @@ classdef conZono < matlab.mixin.Copyable
     end
     
     methods
-        function obj = conZono
-            % Construct a constrained zonotope
+        function obj = conZono(c,G,A,b)
+            if nargin==0
+                %empty constructor
+            elseif nargin==2
+                % Construct a zonotope as a constrained zonotope providing
+                % c and G only
+                obj.c = c;
+                obj.G = G;
+                getDimensions(obj);
+            elseif nargin == 4
+                 % Construct a constrained zonotope providing all matrices
+                obj.c = c;
+                obj.G = G;
+                obj.A = A;
+                obj.b = b;
+                getDimensions(obj);            
+            else
+                error('Invalid number of arguments for conZono constructor.');
+            end
         end
         
         % Methods in separate files

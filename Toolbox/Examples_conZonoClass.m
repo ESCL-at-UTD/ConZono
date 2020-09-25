@@ -24,6 +24,38 @@ grid on;
 box on;
 legend('$Z_c$','interpreter','Latex');
 
+%Alternative constructors
+clearvars z;
+c = [0;0];
+G = [1 0 0; 0 1 0];
+A = [1 1 1];
+b = [1];
+
+% c,g constructor
+z = conZono(c,G);
+figure; z.plot('b',0.1); hold on;
+z.A = [1 1 1];
+z.b = [1];
+z.plot('r',0.1);
+
+xlabel('$z_1$','interpreter','Latex');
+ylabel('$z_2$','interpreter','Latex');
+set(gcf,'color','w');
+grid on;
+box on;
+legend('$Z_c$','interpreter','Latex');
+
+% c,G,A,b constructor
+clearvars z;
+z = conZono(c,G,A,b);
+figure; z.plot('b',0.1); hold on;
+xlabel('$z_1$','interpreter','Latex');
+ylabel('$z_2$','interpreter','Latex');
+set(gcf,'color','w');
+grid on;
+box on;
+legend('$Z_c$','interpreter','Latex');
+
 %% 2 - Constructing and plotting the scalar multiplication of a zonotope
 figure;hold on
 z.plot
