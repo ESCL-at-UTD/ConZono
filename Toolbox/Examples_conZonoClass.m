@@ -530,7 +530,7 @@ x_r
 figure('Position',[100 100 400 600]); hold on
 hold on;
 x1.plot('r',1);
-x2.plot('b',1);
+x_r.plot('b',1);
 
 xlabel('$z_1$')
 ylabel('$z_2$')
