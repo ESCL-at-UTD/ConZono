@@ -1,8 +1,8 @@
 function [out] = rrefcp(obj)
-obj0 = copy(obj);
-obj0.getDimensions;
 
-A_rref = [obj0.A obj0.b]; %concatenates A and b matrices to compute rref
+obj.getDimensions;
+
+A_rref = [obj.A obj.b]; %concatenates A and b matrices to compute rref
 
 [m,n] = size(A_rref); % computes the dimension of A_rref.
 
@@ -60,6 +60,7 @@ if rats
     A_rref = num./den;
 end
 
+obj0 = conZono;
 obj0.A = A_rref(:,1:size(obj.A,2));
 obj0.b = A_rref(:,size(obj.A,2)+1);
 obj0.G = obj.G(:,ind(1:end-1));
