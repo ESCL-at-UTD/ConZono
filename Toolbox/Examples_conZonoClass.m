@@ -5,6 +5,7 @@ set(0,'defaultTextFontName' , 'Times')
 set(0,'defaultAxesFontSize' , 18)
 set(0,'defaultTextFontSize' , 18)
 set(0,'defaulttextinterpreter','latex')
+set(0,'defaultlegendinterpreter','latex')
 set(0,'defaultAxesGridLineStyle','-.')
 
 %% 1 - Constructing and plotting a constrained zonotope
@@ -550,3 +551,30 @@ set(gcf, 'Color', 'w');
 %% 15- Rescaling the $\xi$ bounds of a constrained zonotope
 
 [Z_d_rescaled] = rescale(Z_d)
+
+%% 16 - Computing the interval hull of a constrained zonotope
+
+%Define constrained zonotope
+x0 = conZono([0;0],[-1 3 4;4 -2 -5],zeros(0,3),[]);
+E = [1 0; 0 1];
+f = [5; 5];
+H = Polyhedron('H',[E f]);
+x = halfspaceIntersection(x0,H); % Halfspace intersection
+
+%compute interval hull
+[IH,IH_bounds] = x.intervalHull;
+
+
+figure;
+x.plot('b',0.1);hold on;
+IH.plot('g',0.1);
+xlim([-9 6]);
+ylim([-10 6]);
+legend('$x$','$IH$','location','southwest');
+
+%% 17 - computing the cartesian product of two constrained zonotopes
+
+z1 = conZono([10;10],[1;1],[3 4; -5 2],[0;0]);
+z2 = conZono([0],[5]);
+
+z3 = cartProd(z1,z2)

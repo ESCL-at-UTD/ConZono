@@ -59,6 +59,9 @@ classdef conZono < matlab.mixin.Copyable
 		out = bounds_lp(obj)
 		out = rescale(obj)
 		out = volumeratio(obj1,obj2)
+        out = cartProd(obj1,obj2)
+        [IH,IH_bounds] = intervalHull(obj)
+        out = reduce(obj) % EXPERIMENTAL
     end
 end
 
