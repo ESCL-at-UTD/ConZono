@@ -1,5 +1,5 @@
 function [out_R,out_E,out_rep] = bounds(obj,maxIter)
-obj.getDimensions;
+
 
 e_lb = -ones(obj.nG,1); % Initialization 
 e_ub =  ones(obj.nG,1);

@@ -1,5 +1,5 @@
 function out = mtimes(obj,a)
-obj.getDimensions;
+
 if ~isscalar(a)
     disp('Can only multiply AH-polytopes by scalars!')
 else
@@ -8,6 +8,5 @@ else
     out.G = obj.G;
     out.A = obj.A;
     out.b = a*obj.b;
-    out.getDimensions;
 end
 end

@@ -1,6 +1,5 @@
 function out = innerApprox(obj,n_r)
 obj0 = copy(obj);
-obj0.getDimensions;
 
 n_g = obj0.nG;
 Norms = vecnorm(obj0.G);
@@ -31,5 +30,4 @@ T = [eye(n_r);T2'];
 out = copy(obj)
 out.c = obj0.c;
 out.G = obj0.G*T;
-out.getDimensions();
 end

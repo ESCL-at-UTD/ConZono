@@ -2,12 +2,10 @@
 x = Zono;
 x.c = [2;0];
 x.G = [1 0;0 1];
-x.getDimensions
 
 c_zon = Zono;
 c_zon.c = [2;0];
 c_zon.G = [3 0; 0 1];
-c_zon.getDimensions
 
 containCheck(x,c_zon) % Check whether $x \in c$.
 

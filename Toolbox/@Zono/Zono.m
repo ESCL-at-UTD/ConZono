@@ -4,11 +4,13 @@ classdef Zono < matlab.mixin.Copyable
     
     properties
         c  % Center vector
-        G  % Generator matrix
-        A  % Constraint matrix
-        b  % Constraint vector
+        G  % Generator matrix 
+    end
+    
+    %These properties values depend on other properties and do not store any data themselves
+    properties (Dependent)
         n  % Dimension
-        nG % Number of generators   
+        nG % Number of generators
     end
     
     methods
@@ -16,8 +18,15 @@ classdef Zono < matlab.mixin.Copyable
             % Construct a zonotope
         end
         
+         %Property getter methods
+        function value = get.n(obj)
+            value  = size(obj.c,1);
+        end
+        function value = get.nG(obj)
+            value  = size(obj.G,2);
+        end
+        
         % Methods in separate files
-        getDimensions(obj)
         plot(obj,varargin)
 		out = containCheck(obj1,obj2)
         out = innnerApprox(obj1,obj2,varargin)

@@ -7,7 +7,11 @@ classdef affineHPoly < matlab.mixin.Copyable
         G  % Generator matrix
         A  % Constraint matrix
         b  % Constraint vector
-        n  % Dimension
+    end
+    
+         %These properties values depend on other properties and do not store any data themselves
+    properties (Dependent)
+         n  % Dimension
         nG % Number of generators
         nH % Number of halfspaces
     end
@@ -17,8 +21,21 @@ classdef affineHPoly < matlab.mixin.Copyable
             % Construct a AH-polytope
         end
         
+        %Property getter methods
+        function value = get.n(obj)
+            value  = size(obj.c,1);
+        end
+        function value = get.nG(obj)
+            value  = size(obj.G,2);
+        end
+        function value = get.nH(obj)
+            value  = size(obj.A,1);
+        end
+                
+
+        
+        
         % Methods in separate files
-        getDimensions(obj)
         plot(obj,varargin)
         out = mtimes(obj,a)
         out = plus(obj1,obj2)

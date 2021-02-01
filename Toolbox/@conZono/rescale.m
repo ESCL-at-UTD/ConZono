@@ -1,5 +1,5 @@
 function out = rescale(obj)
-obj.getDimensions;
+
 obj0 = copy(obj);
 
 [~,E,~] = bounds(obj,1);

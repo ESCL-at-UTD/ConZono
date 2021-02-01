@@ -1,6 +1,4 @@
 function [out] = pontryagin_diff(obj1,obj2,varargin)
-obj1.getDimensions
-obj2.getDimensions
 
 if obj1.n ~= obj2.n
 	disp(['Cannot compute the Pontryagin difference between a zonotope in ',num2str(obj1.n),...

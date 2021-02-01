@@ -13,7 +13,6 @@ function plot(obj,varargin)
 % obj.plot([1 2],'b',0.1);
 %
 
-obj.getDimensions;
 needsProjection = true;
 
 % input checking

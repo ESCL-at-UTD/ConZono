@@ -1,7 +1,6 @@
 function [out] = redundancy_parallelgen(obj,varargin)
 
 obj0 = copy(obj)
-obj0.getDimensions
 
 if isempty(varargin)
 	eps = 1e-6;

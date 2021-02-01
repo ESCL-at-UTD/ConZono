@@ -1,5 +1,4 @@
 function out = volume(obj)
-obj.getDimensions;
 if obj.nC == 0
     Box = Polyhedron('lb',-ones(obj.nG,1),'ub',ones(obj.nG,1));
 else

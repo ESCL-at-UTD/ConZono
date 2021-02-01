@@ -509,7 +509,7 @@ x2.b = [];
 [x] = generalizedIntersection(x1,x2,eye(2));
 
 % Determining redundant generators and constraints
-[x_r,~] = rrefcp(x);
+[x_r] = rrefcp(x);
 nc = size(x_r.A,1);
 ng = size(x_r.A,2);
 red_iter = 100;
@@ -546,7 +546,7 @@ set(gcf, 'Color', 'w');
 
 %% 14- Reduced-row echelon form (rref) of a constrained zonotope with [A b] in rref.
 
-[out,out_ind] = rrefcp(Z_d)
+[out] = rrefcp(Z_d)
 
 %% 15- Rescaling the $\xi$ bounds of a constrained zonotope
 

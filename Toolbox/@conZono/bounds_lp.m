@@ -1,5 +1,5 @@
 function out = bounds_lp(obj)
-obj.getDimensions;
+
 ng = obj.nG;
 
 for i = 1:ng

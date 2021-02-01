@@ -1,6 +1,5 @@
 function [out] = removerowicolumnj(obj,i,j)
 out = copy(obj);
-obj.getDimensions;
 
 Eji = zeros(obj.nG,obj.nC);
 Eji(j,i) = 1;

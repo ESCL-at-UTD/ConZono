@@ -1,5 +1,5 @@
 function [out] = redundancy_indices(obj,maxIter)
-obj.getDimensions
+
 [R_ind,~,~] = bounds_ind(obj,maxIter);
 out = [];
 

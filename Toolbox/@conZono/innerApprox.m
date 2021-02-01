@@ -1,7 +1,6 @@
 function out = innerApprox(obj1,obj2,varargin)
 % Method options: 'Hausdorff' or 'Infinity Norm'
-obj1.getDimensions;
-obj2.getDimensions;
+
 if obj1.n ~= obj2.n
     disp(['Cannot approximate a zonotope in ',num2str(obj2.n),...
         ' dimensions by a zonotope in ',num2str(obj1.n),' dimensions!'])

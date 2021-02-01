@@ -1,7 +1,5 @@
 function [out] = rrefcp(obj)
 
-obj.getDimensions;
-
 A_rref = [obj.A obj.b]; %concatenates A and b matrices to compute rref
 
 [m,n] = size(A_rref); % computes the dimension of A_rref.
@@ -66,7 +64,5 @@ obj0.b = A_rref(:,size(obj.A,2)+1);
 obj0.G = obj.G(:,ind(1:end-1));
 obj0.c = obj.c;
 
-
-obj0.getDimensions;
 out = obj0;
 end

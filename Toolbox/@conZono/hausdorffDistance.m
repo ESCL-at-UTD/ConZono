@@ -1,6 +1,5 @@
 function out = hausdorffDistance(obj1,obj2)
-obj1.getDimensions;
-obj2.getDimensions;
+
 if obj1.n ~= obj2.n
     disp(['Cannot compute the Hausdorff distance of a zonotope in ',num2str(obj1.n),...
         ' dimensions to a zonotope in ',num2str(obj2.n),' dimensions!'])

@@ -1,7 +1,5 @@
 function out = containCheck(obj1,obj2)
 % Check if obj1 is contained in obj2
-obj1.getDimensions;
-obj2.getDimensions;
 if obj1.n ~= obj2.n
     disp(['Cannot check containment of a AH-polytope in ',num2str(obj1.n),...
         ' dimensions to a AH-polytope in ',num2str(obj2.n),' dimensions!'])

@@ -7,6 +7,10 @@ classdef conZono < matlab.mixin.Copyable
         G  % Generator matrix
         A  % Constraint matrix
         b  % Constraint vector
+    end
+    
+    %These properties values depend on other properties and do not store any data themselves
+    properties (Dependent)
         n  % Dimension
         nG % Number of generators
         nC % Number of constraints
@@ -21,24 +25,49 @@ classdef conZono < matlab.mixin.Copyable
                 % c and G only
                 obj.c = c;
                 obj.G = G;
-                getDimensions(obj);
             elseif nargin == 4
                  % Construct a constrained zonotope providing all matrices
                 obj.c = c;
                 obj.G = G;
                 obj.A = A;
-                obj.b = b;
-                getDimensions(obj);            
+                obj.b = b;            
             else
                 error('Invalid number of arguments for conZono constructor.');
             end
         end
         
+        
+         function value = get.A(obj)
+            
+            %This code ensures that, if A is empty, any code accessing this property will
+            %get an empty 0 by obj.nG matrix. This ensures consistency in several
+            %methods when concatenating A with other matrices without
+            %having to check if A is empty.
+            if size(obj.A,1)==0
+                value = zeros(0,obj.nG);
+            else
+                value = obj.A;
+            end
+            
+        end
+        
+        
+        %Property getter methods
+        function value = get.n(obj)
+            value  = size(obj.c,1);
+        end
+        function value = get.nG(obj)
+            value  = size(obj.G,2);
+        end
+        function value = get.nC(obj)
+            value  = size(obj.A,1);
+        end
+        
+        
         % Methods in separate files
-        getDimensions(obj)
-        plot(obj,varargin) % Works
+        plot(obj,varargin) 
         out = volume(obj)
-        out = mtimes(obj1,obj2) % Works
+        out = mtimes(obj1,obj2)
         out = plus(obj1,obj2)
         out = halfspaceIntersection(obj,H)
         out = generalizedIntersection(obj1,obj2,R)

@@ -9,11 +9,11 @@ else
     disp('Can only multiply zonotopes by scalars or matrices!')
     return
 end
-obj.getDimensions;
+
 out = conZono;
 out.c = a*obj.c;
 out.G = a*obj.G;
 out.A = obj.A;
 out.b = obj.b;
-out.getDimensions;
+
 end

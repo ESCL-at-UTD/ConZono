@@ -1,8 +1,6 @@
 function cons_out = conPointContain(point,obj,cons_in)
 % Check if obj1 is contained in obj2
-obj.getDimensions;
 point_n = size(point,1);
-%obj2.getDimensions;
 if obj.n ~= point_n
     disp(['Cannot check containment of a singleton in ',num2str(point_n),...
         ' dimensions to a AH-polytope in ',num2str(obj.n),' dimensions!'])

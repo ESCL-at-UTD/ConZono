@@ -1,5 +1,4 @@
 function out = halfspaceIntersection(obj,H)
-obj.getDimensions;
 m = size(H.H,2)-1;
 if obj.n ~= m
     disp(['Cannot add a zonotope in ',num2str(obj.n),...
@@ -13,7 +12,6 @@ else
             out.b = [out.b; H.H(j,end)-H.H(j,1:end-1)*out.c-d_max/2];
             out.c = out.c;
             out.G = [out.G, zeros(out.n,1)];
-            out.getDimensions;
         end
     end
 end

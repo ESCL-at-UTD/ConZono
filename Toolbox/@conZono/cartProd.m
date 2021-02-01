@@ -22,8 +22,6 @@ arguments
    obj2 conZono
 end
 
-getDimensions(obj1);
-getDimensions(obj2);
 
 % new center vector
 c = [obj1.c; obj2.c];
@@ -52,6 +50,5 @@ b = [obj1.b;obj2.b];
 % generate resulting constrained zonotope
 out = conZono(c,G,A,b);
 
-getDimensions(out);
 end
 

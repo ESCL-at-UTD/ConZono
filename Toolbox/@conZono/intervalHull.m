@@ -18,8 +18,6 @@ function [IH,IH_bounds] = intervalHull(obj)
 % [IH,IH_bounds] = Z.intervalHull;
 %
 
-obj.getDimensions;
-
 %check for empty constrained zonotope
 if obj.n==0 
     IH = conZono;
@@ -91,8 +89,5 @@ IH_lb = IH_bounds(:,1);
 IH_ub = IH_bounds(:,2);
 IH_c = IH_lb + (IH_ub-IH_lb)/2;
 IH = conZono(IH_c,diag(IH_ub-IH_c));
-
-IH.getDimensions
-
 
 end

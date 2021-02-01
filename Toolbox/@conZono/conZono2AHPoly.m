@@ -1,5 +1,5 @@
 function out = conZono2AHPoly(obj)
-obj.getDimensions;
+
 out = affineHPoly;
 if obj.nC == 0
     out.c = obj.c;
@@ -16,5 +16,5 @@ else
     out.A = P.H(:,1:end-1);
     out.b = P.H(:,end);
 end
-out.getDimensions;
+
 end

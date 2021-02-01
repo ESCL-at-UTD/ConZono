@@ -1,6 +1,5 @@
 function out = convexHull(obj1,obj2)
-obj1.getDimensions;
-obj2.getDimensions;
+
 out = conZono;
 if obj1.n ~= obj2.n
     disp(['Cannot compute the convex hull of a zonotope in ',num2str(obj1.n),...
@@ -28,6 +27,5 @@ else
         zeros(obj2.nC,obj1.nG) obj2.A +b2/2 zeros(obj2.nC,size(out.G,2)-obj2.nG -obj1.nG-1);...
         H I];
     out.b = [obj1.b/2;obj2.b/2;f];
-    out.getDimensions;
 end
 end

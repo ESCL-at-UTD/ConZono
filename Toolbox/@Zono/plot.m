@@ -1,7 +1,6 @@
 function plot(obj,varargin)
 % Plot a constrained zonotope
 % Default color: red. Default alpha: 1.
-obj.getDimensions;
 if isempty(varargin)
     color = 'r'; alpha = 1;
 elseif length(varargin) == 2
