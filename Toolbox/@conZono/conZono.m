@@ -61,7 +61,6 @@ classdef conZono < matlab.mixin.Copyable
 		out = volumeratio(obj1,obj2)
         out = cartProd(obj1,obj2)
         [IH,IH_bounds] = intervalHull(obj)
-        out = reduce(obj) % EXPERIMENTAL
     end
 end
 
