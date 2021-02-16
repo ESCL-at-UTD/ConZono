@@ -37,18 +37,34 @@ elseif length(varargin) == 2
     
 elseif length(varargin) == 3
     dims = varargin{1}; color = varargin{2}; alpha = varargin{3};
-    
+
+elseif length(varargin) == 4 %TEMP
+     dims = varargin{1}; color = varargin{2}; alpha = varargin{3};
+     USE_NEW_METHOD =  varargin{4};
 end
 
+if ~exist('USE_NEW_METHOD','var')
+    USE_NEW_METHOD = true;
+end
 
 if obj.nC == 0
     Box = Polyhedron('lb',-ones(obj.nG,1),'ub',ones(obj.nG,1));
+    if needsProjection && USE_NEW_METHOD
+        %Projects center and generators on the selected dimensions
+        c = obj.c(dims); 
+        G = obj.G(dims,:);
+        needsProjection = false;
+    else
+        c = obj.c;
+        G = obj.G;
+    end
 else
     Box = Polyhedron('lb',-ones(obj.nG,1),'ub',ones(obj.nG,1),'He',[obj.A obj.b]);
+    c = obj.c;
+    G = obj.G;
 end
 
-%P = plus(obj.c,affineMap(Box,obj.G));
-P = obj.c + obj.G*Box;
+P = c + G*Box;
 
 if needsProjection
     plot(P.projection(dims),'color',color,'alpha',alpha);
