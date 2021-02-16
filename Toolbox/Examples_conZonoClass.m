@@ -475,8 +475,9 @@ Z2.b = [];
 Z_d = pontryagin_diff(Z1,Z2); 
 
 % Approximating Pontryagin difference (1-step method) 
-
+tic
 Z_d_approx = pontryagin_diff_1step(Z1,Z2)
+toc
 
 figure;
 Z_d.plot('b',0.4);

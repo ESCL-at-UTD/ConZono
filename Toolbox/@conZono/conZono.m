@@ -14,6 +14,7 @@ classdef conZono < matlab.mixin.Copyable
         n  % Dimension
         nG % Number of generators
         nC % Number of constraints
+        order % Constrained zonotope order
     end
     
     methods
@@ -61,6 +62,9 @@ classdef conZono < matlab.mixin.Copyable
         end
         function value = get.nC(obj)
             value  = size(obj.A,1);
+        end
+        function value = get.order(obj)
+            value  = (obj.nG - obj.nC)/obj.n;
         end
         
         

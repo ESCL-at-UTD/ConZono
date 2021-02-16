@@ -11,6 +11,7 @@ classdef Zono < matlab.mixin.Copyable
     properties (Dependent)
         n  % Dimension
         nG % Number of generators
+        order % Zonotope order
     end
     
     methods
@@ -24,6 +25,9 @@ classdef Zono < matlab.mixin.Copyable
         end
         function value = get.nG(obj)
             value  = size(obj.G,2);
+        end
+        function value = get.order(obj)
+            value  = obj.nG/obj.n;
         end
         
         % Methods in separate files
