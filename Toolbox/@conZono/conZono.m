@@ -70,7 +70,7 @@ classdef conZono < matlab.mixin.Copyable
         
         % Methods in separate files
         plot(obj,varargin) 
-        out = volume(obj)
+        out = volume(obj,use_old_method)
         out = mtimes(obj1,obj2)
         out = plus(obj1,obj2)
         out = halfspaceIntersection(obj,H)

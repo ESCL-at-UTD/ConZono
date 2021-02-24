@@ -1,6 +1,11 @@
-function out = volume(obj)
+function out = volume(obj,use_old_method)
+arguments
+    obj
+    use_old_method  (1,1)   logical = false
+end
+    
 if obj.nC == 0
-    if false %OLD Method
+    if use_old_method %OLD Method
         Box = Polyhedron('lb',-ones(obj.nG,1),'ub',ones(obj.nG,1));
     else
         %NEW METHOD
