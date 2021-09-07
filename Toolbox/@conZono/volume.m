@@ -25,9 +25,11 @@ if obj.nC == 0
             % approximation instead.
             indexes = nchoosek(1:obj.nG,obj.n);
             vol = 0;
+%             figure; hold on;
             for i=1:size(indexes,1)
                 A = obj.G(:,indexes(i,:));
                 vol = vol + abs(det(A));
+%                 plot(i,abs(det(A)),'-x');
             end
             
         else % DO NOT USE THIS OPTION, RESULTS ARE SLIGHTlY OFF, NEEDS MORE DEBUGGING
