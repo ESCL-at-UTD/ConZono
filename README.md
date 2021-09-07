@@ -6,7 +6,7 @@ convex hull, RPI sets and Pontryagin difference using Zonotopes and Constrained 
 + Applied numerical example of these methods to reachability analysis in the context of hierarchical model predictive control.
 
 + ## Pre-requisites 
-+ Example codes uses [MATLAB R2018b or higher](https://www.mathworks.com/products/matlab.html), [MPT Toolbox](https://www.mpt3.org/), [YALMIP](https://yalmip.github.io) and [Gurobi](www.gurobi.com)
++ Example codes uses [MATLAB R2019b or higher](https://www.mathworks.com/products/matlab.html), [MPT Toolbox](https://www.mpt3.org/), [YALMIP](https://yalmip.github.io) and [Gurobi](www.gurobi.com)
 
 + ## Organization Structure
 
