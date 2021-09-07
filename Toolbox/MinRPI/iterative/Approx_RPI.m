@@ -53,7 +53,7 @@ function [F_approx,s,alpha_o] = Approx_RPI(A,W,epsilon,MAX_ITER)
         F_approx.c = 1/(1-alpha_o)*Fs.c;
         F_approx.G = 1/(1-alpha_o)*Fs.G;
         
-%         F_approx = conZono(F_approx.c, F_approx.G); %conversts to conZono
+        F_approx = conZono(F_approx.c, F_approx.G); %converts to conZono
     else
         
     end
